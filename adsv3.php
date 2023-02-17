@@ -1,4 +1,4 @@
-<?php
+M<?php
 system("clear");
 @error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 error_reporting(0);
@@ -87,16 +87,7 @@ echo "\033[1;37m  Join My Telegram 🙏🙏🙏\r";
 sleep(1);
 echo "\033[1;37m  Thanks 🙏🙏🙏                   \r";
 sleep(5);
-}
-
-
-
-
-
-
-
-
-function curl($url, $post = 0, $httpheader = 0, $proxy = 0){ // url, postdata, http headers, proxy, uagent
+}function curl($url, $post = 0, $httpheader = 0, $proxy = 0){ // url, postdata, http headers, proxy, uagent
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -130,17 +121,11 @@ function curl($url, $post = 0, $httpheader = 0, $proxy = 0){ // url, postdata, h
             return array($header, $body);
         }
     }
-
-
 function get($url,$host){
   return curl($url,'',head($host))[1];
-}
-
-function post($url,$data,$host){
+}function post($url,$data,$host){
   return curl($url,$data,head($host))[1];
-}
-
-function head($host){
+}function head($host){
 $user=json_decode(file_get_contents("data.json"),true)["User"];
 $cookie=json_decode(file_get_contents("data.json"),true)["Cookie"];
   $h[]="Host: $host";
@@ -149,7 +134,6 @@ $cookie=json_decode(file_get_contents("data.json"),true)["Cookie"];
   $h[]="cookie: $cookie";
   return $h;
 }
-
 if(!file_exists("data.json")){
 while("true"){
 system("clear");
@@ -182,8 +166,6 @@ function save($data,$data_post){
     $arr=array_merge($json,$data_post);
     file_put_contents($data,json_encode($arr,JSON_PRETTY_PRINT));
 }
-
-
 function timer($timer){
 date_default_timezone_set('UTC');
 $tim = time()+$timer;
@@ -193,7 +175,6 @@ $bpur="\033[35m";$m="\033[31m";
 $bhj="\033[33m";$ungu="\033[1;35m";
 $rm="\033[0"."m";$biru="\033[1;34m";
 $putih="\033[1;37m";
-
 $wrn=[$birumuda,$birumuda,$m,$m,$biru,$biru,$hijau,$hijau,$ungu,$ungu,$kuning,$kuning,$hijau,$hijau];
 $wr=[$ungu,$ungu,$biru,$biru,$hijau,$hijau,$birumuda,$birumuda,$kuning,$kuning];
 $w=[$hijau,$hijau,$birumuda,$birumuda,$hijau,$hijau,$ungu,$ungu,$biru,$biru];
@@ -217,8 +198,6 @@ $i++;
 if($i >= count ($wrn)){$i=0;}
 endwhile;
  }
-
-
 system("clear");
 echo fas("    \033[1;97mDate :".date(" D m Y "));echo fas("                         \033[1;97mTime :".date(" H:i:s "))." \n";
 fast(str_repeat($putih."◼",67)."\n");
@@ -240,8 +219,6 @@ goto loi;
 //echo " $bal\n";
 //fast(str_repeat($putih."═",67)."\n");
 if($bal==""){
-
-        
         echo "Update Cookie \n";
         echo " \e[1;96m▶▶ \e[1;37mInput Your Cookie:\e[1;36m\n";
         $api["Cookie"] = ''.$satar;
